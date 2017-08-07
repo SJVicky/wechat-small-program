@@ -1,0 +1,37 @@
+<!--引入template-->
+<import src="post-item/post-item-template.wxml" />
+<view>
+  <swiper class="swiper-con" indicator-dots="true" autoplay="true" interval="5000">
+    <block wx:for="{{imgPost}}" >
+      <swiper-item >
+        <image src="{{item.imgPath}}" data-postId="{{item.post}}" catchtap="onSwiperItemTap"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <!--wx:for 只能针对当前页面中的循环-->
+  <!--<block wx:for="{{posts_key}}" wx:for-item="item">
+    <view class="post-container">
+      <view class="post-author-date">
+        <image class="post-author" src="{{item.avatar}}"></image>
+        <text class="post-date">{{item.date}}</text>
+      </view>
+      <text>正是虾肥蟹壮时</text>
+      <image class="post-image" src="{{item.imgSrc}}"></image>
+      <text class="post-content">{{item.content}}</text>
+      <view class="post-like">
+        <image class="post-like-icon" src="{{iconChat}}"></image>
+        <text class="post-like-font">{{item.collection}}</text>
+        <image class="post-like-icon" src="{{iconView}}"></image>
+        <text class="post-like-font">{{item.reading}}</text>
+      </view>
+    </view>
+  </block>-->
+
+  <block wx:for="{{posts_key}}" wx:for-item="item">
+  <!--data-xxx 对应方法onPostTap的event.currentTarget.dataset中包含这些数据-->
+    <view catchtap="onPostTap" data-postId="{{item.postId}}">
+      <template is="postItem" data="{{...item}}"></template>
+    </view>
+  </block>
+</view>

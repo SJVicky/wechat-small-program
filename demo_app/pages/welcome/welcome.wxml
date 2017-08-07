@@ -1,0 +1,7 @@
+<view class="container">
+  <image class="head-port" src="http://wx.qlogo.cn/mmhead/ZHK9X5JK58wguTJzic2vFFicHSYtUB5mgvRticjt7eLK2DdtacWYvVicxQ/132"></image>
+  <text class="usr-name">Hello,麦兜裤裤飞</text>
+  <view class="moto-container" bindtap="onStart">
+    <text class="moto" >开启小程序之旅</text>
+  </view>
+</view>

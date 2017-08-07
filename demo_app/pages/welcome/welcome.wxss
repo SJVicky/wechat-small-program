@@ -1,0 +1,34 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  }
+.head-port{
+  width:128rpx;
+  height:128rpx;
+  margin-top:160rpx;
+  border-radius:50%;
+}
+.usr-name{
+  margin-top:100rpx;
+  font-size:32rpx;
+  font-family: MicroSoft Yahei;
+  font-weight: bold;
+}
+.moto-container{
+  margin-top:200rpx;
+  border: 1px solid #405f80;
+  width:200rpx;
+  height:80rpx;
+  border-radius: 5rpx;
+  text-align: center;
+}
+.moto{
+  font-size:22rpx;
+  font-family: MicroSoft Yahei;
+  font-weight: bold;
+  line-height: 80rpx;
+}
+page{
+  background-color:#b3d4db;
+}

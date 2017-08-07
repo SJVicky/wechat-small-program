@@ -1,0 +1,24 @@
+<view class="container">
+  <image class="head-img" src="{{posts_key.headImgSrc}}"></image>
+  <image wx:if="{{isPlayingMusic}}" class="audio" catchtap="onMusicTap" src="/images/music/music-stop.png"></image>
+   <image wx:else class="audio" catchtap="onMusicTap" src="/images/music/music-start.png"></image>
+  <view class="author-data">
+    <image class="avatar" src="{{posts_key.avatar}}"></image>
+    <text class="author">{{posts_key.author}}</text>
+    <text class="const-text">发表于</text>
+    <text class="data">{{posts_key.dateTime}}</text>
+  </view>
+  <text class="title">{{posts_key.title}}</text>
+  <view class="tool">
+    <view class="circle-img">
+      <!--<image catchtap="onCollectionTap" src="/images/icon/collection.png"></image>
+      <image  catchtap="onShareTap" class="share-img" src="/images/icon/share.png"></image>-->
+      <!--状态切换-->
+      <image  wx:if="{{collected}}" src="/images/icon/collection.png" catchtap="onCollectionTap"></image>
+      <image  wx:else src="/images/icon/collection-anti.png" catchtap="onCollectionTap"></image>
+      <image  catchtap="onShareTap" class="share-img" src="/images/icon/share.png"></image>
+    </view>
+    <view class="line"></view>
+  </view>
+  <text class="detail">{{posts_key.detail}}</text>
+</view>
