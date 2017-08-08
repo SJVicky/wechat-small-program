@@ -3,7 +3,7 @@
 > 一个微信小程序（应用号）开发示例（豆瓣电影）
 ## 预览
 
-![豆瓣电影演示](https://github.com/SJVicky/wechat-small-program/tree/master/demo_app/images/wx-app.gif)
+![豆瓣电影演示](https://github.com/SJVicky/wechat-small-program/blob/master/demo_app/images/wx-app.gif)
 
 
 ## 完整示例特点
