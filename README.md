@@ -1,77 +1,123 @@
-# wechat-small-program
+# 微信小程序开发教程示例
 
-[线上地址](http://SJVicky.github.io/wechat-small-program/demo-app)
+> 一个微信小程序（应用号）开发示例（豆瓣电影）
+## 预览
 
-[English Document](https://github.com/SJVicky/wechat-small-program/master/README.md)
-
-
-
-
-## 功能
+![豆瓣电影演示](https://github.com/zce/weapp-demo/raw/tutorial/preview.gif)
 
 
+## 重要申明
 
-## 开发
-```bash
-    # 克隆项目
-    git clone https://github.com/PanJiaChen/vue-element-admin.git
+- **微信小程序官方已经向没有资格的开发者开放了`微信Web开发者工具`的使用**
+- 这里不需要再用[之前的办法](https://github.com/gavinkwoe/weapp-ide-crack)破解，破解了有问题！破解了有问题！破解了有问题！
 
-    # 安装依赖
-    npm install
-    //or # 建议不要用cnpm  安装有各种诡异的bug 可以通过如下操作解决npm速度慢的问题
-    npm install --registry=https://registry.npm.taobao.org
+### 解决办法
 
-    # 本地开发 开启服务
-    npm run dev
-```
+- 完全卸载之前的版本(删除掉用户目录下与`微信Web开发者工具`相关的目录)
+- 安装`0.9.092300`或`0.10.102800`版本
 
 
-## 发布
-```bash
-    # 发布测试环境 带webpack ananalyzer
-    npm run build:sit-preview
+## 完整示例特点
 
-    # 构建生成环境
-    npm run build:prod
-```
+- 开发阶段与生产阶段分离。
+- 自动化生成新页面所需文件并添加到配置中。
+- 以`Standard Code Style`校验全部的`js`和`json`文件。
+- 开发阶段`json`配置文件可以有注释，方便备注。
+- 代码中集成部分文档内容，减少查文档的时间。
+- 借助`babel`自动进行`ES2015`特性转换，放心使用新特性。
+- 开发阶段用`xml`文件后缀取代`wxml`后缀，避免在开发工具中配置代码高亮。
+- Source Map
+- Travis CI
 
-## 目录结构
+
+## 操作步骤
+
+### 将项目克隆到本地
+
+用到了`GIT`环境，没有环境的话请自行解决吧。
+
 ```shell
-├── build                      // 构建相关  
-├── config                     // 配置相关
-├── src                        // 源代码
-│   ├── api                    // 所有请求
-│   ├── assets                 // 主题 字体等静态资源
-│   ├── components             // 全局公用组件
-│   ├── directive              // 全局指令
-│   ├── filtres                // 全局filter
-│   ├── mock                   // mock数据
-│   ├── router                 // 路由
-│   ├── store                  // 全局store管理
-│   ├── styles                 // 全局样式
-│   ├── utils                  // 全局公用方法
-│   ├── view                   // view
-│   ├── App.vue                // 入口页面
-│   └── main.js                // 入口 加载组件 初始化等
-├── static                     // 第三方不打包资源
-│   ├── jquery
-│   └── Tinymce                // 富文本
-├── .babelrc                   // babel-loader 配置
-├── eslintrc.js                // eslint 配置项
-├── .gitignore                 // git 忽略项
-├── favicon.ico                // favicon图标
-├── index.html                 // html模板
-└── package.json               // package.json
+# 定位到任意目录
+$ cd path/to/root
 
+# 克隆仓库到指定的文件夹
+$ git clone https://github.com/SJVicky/demo-app.git [project-name] --depth 1
+
+# 进入指定的文件夹
+$ cd [project-name]
 ```
 
-## 效果图
+### 安装项目`NPM`依赖
 
-#### 两步验证登录 支持微信和qq
+用到了`Node`环境，没有环境的话也请自行解决吧。
 
-//![两步验证 here](https://github.com/PanJiaChen/vue-element-admin/blob/master/gifs/2login.gif)
+```shell
+$ npm install
+```
 
 
-## License
+## 使用说明
 
-MIT
+
+
+### 开发阶段
+
+执行如下命令
+
+```shell
+# 启动监视
+$ npm run watch
+```
+
+通过`微信Web开放者工具`打开项目根目录下`dist`文件夹，预览~
+
+- 打开`微信Web开放者工具`，选择`添加项目`，填写或选择相应信息
+  + AppID：点击右下角`无AppID`（尚未开放申请）
+  + 项目名称：随便填写，因为不涉及到部署，所以无所谓
+  + 项目目录：选择项目根目录下`dist`文件夹
+  + 点击`添加项目`
+- 可以通过任意开发工具完成`src`下的编码，`gulp`会监视项目根目录下`src`文件夹，当文件变化自动编译
+
+#### 创建新页面
+
+执行如下命令
+
+```shell
+# 启动生成器
+$ npm run generate
+? Input the page name (index) [page-name]
+? Do you need a configuration file (y/N) N
+? Select a style framework (Use arrow keys)
+> less
+# 自动生成...
+```
+
+由于微信小程序的每一个页面有特定的结构，新建工作比较繁琐。可以通过此任务减少操作。
+
+
+### 生产阶段
+
+执行如下命令
+
+```shell
+# 启动编译
+$ npm run build
+```
+
+生产阶段的代码会经过压缩处理，最终输出到`dist`下。
+
+同样可以通过`微信Web开放者工具`测试。
+
+
+## 开发计划
+
+- [x] 自动化生成新页面所需文件；
+- [x] 自动生成新页面时，自动添加配置到`app.json`；
+- [x] 加入`ES2015`的`Polyfill`，支持类似`Promise`的新`API`；
+- [x] 自动刷新`微信Web开放者工具`中的预览；
+- [ ] `HTML` to `WXML` 转换器，让大家可以直接使用`HTML`元素开发；
+
+
+## 分支说明
++ 主线版本，包含全部功能和特性！
+
