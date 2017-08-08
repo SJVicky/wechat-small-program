@@ -1,6 +1,6 @@
 # wechat-small-program
 
-[线上地址](http://SJVicky.github.io/wechat-small-program)
+[线上地址](http://SJVicky.github.io/wechat-small-program/demo-app)
 
 [English Document](https://github.com/SJVicky/wechat-small-program/master/README.md)
 
