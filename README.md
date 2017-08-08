@@ -3,18 +3,7 @@
 > 一个微信小程序（应用号）开发示例（豆瓣电影）
 ## 预览
 
-![豆瓣电影演示](https://github.com/zce/weapp-demo/raw/tutorial/preview.gif)
-
-
-## 重要申明
-
-- **微信小程序官方已经向没有资格的开发者开放了`微信Web开发者工具`的使用**
-- 这里不需要再用[之前的办法](https://github.com/gavinkwoe/weapp-ide-crack)破解，破解了有问题！破解了有问题！破解了有问题！
-
-### 解决办法
-
-- 完全卸载之前的版本(删除掉用户目录下与`微信Web开发者工具`相关的目录)
-- 安装`0.9.092300`或`0.10.102800`版本
+![豆瓣电影演示](https://github.com/SJVicky/wechat-small-program/tree/master/demo_app/images/wx-app.gif)
 
 
 ## 完整示例特点
@@ -54,10 +43,6 @@ $ cd [project-name]
 ```shell
 $ npm install
 ```
-
-
-## 使用说明
-
 
 
 ### 开发阶段
